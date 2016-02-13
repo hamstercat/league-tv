@@ -1,0 +1,27 @@
+{
+  "name": "league-tv",
+  "version": "1.0.0",
+  "description": "Watch League of Legend's LCS matches live and on demand!",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamstercat/league-tv.git"
+  },
+  "author": "hamstercat",
+  "license": "Copyright hamstercat",
+  "bugs": {
+    "url": "https://github.com/hamstercat/league-tv/issues"
+  },
+  "homepage": "https://github.com/hamstercat/league-tv#readme",
+  "devDependencies": {
+    "browser-sync": "^2.8.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-sass": "^2.0.1"
+  },
+  "dependencies": {
+    "font-awesome": "^4.3.0",
+    "gulp-plumber": "^1.0.1",
+    "plumber": "^0.4.8"
+  }
+}
