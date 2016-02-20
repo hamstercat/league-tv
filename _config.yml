@@ -1,5 +1,4 @@
-title: LeagueTv
-email: league-tv@hamstercat.com
+title: LeagueTV
 description: "Watch League of Legend's LCS matches live and on demand!"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://league-tv.hamstercat.com" # the base hostname & protocol for your site

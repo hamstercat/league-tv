@@ -1,67 +1,231 @@
-.site-nav {
-  float: right;
-  line-height: 56px;
+*, *:before, *:after {
+  box-sizing: border-box;
+}
 
-  .menu-icon {
-    display: none;
+html {
+  height: 100%;
+  font-family: $base-font-family !important;
+  font-size: $base-font-size;
+}
+
+.cognito .c-label,
+.cognito textarea,
+.cognito input {
+  font-family: $base-font-family !important;
+  font-size: $base-font-size;
+  font-weight: 400 !important;
+}
+
+.cognito .c-forms-form button {
+  font-family: $base-font-family !important;  
+}
+
+body {
+  @include media-query-min($on-laptop) {  
+    position: relative;
+    padding-bottom: 6rem;
+    min-height: 100%;
   }
+}
 
-  .page-link {
-    color: $text-color;
-    line-height: $base-line-height;
+header {
+  background-color: $header-background-color;
+  border-bottom: 1px solid $grey-color;
+  font-weight: light;
 
-    // Gaps between nav items, but not on the last one
-    &:not(:last-child) {
-      margin-right: 20px;
-    }
-  }
-
-  @include media-query($on-palm) {
-    position: absolute;
-    top: 9px;
-    right: $spacing-unit / 2;
-    background-color: $background-color;
-    border: 1px solid $grey-color-light;
-    border-radius: 5px;
-    text-align: right;
+  nav {
+    padding-top: 20px;
+    padding-bottom: 20px;
 
     .menu-icon {
-      display: block;
-      float: right;
-      width: 36px;
-      height: 26px;
-      line-height: 0;
-      padding-top: 10px;
-      text-align: center;
+      display: none;
+    }
 
-      > svg {
-        width: 18px;
-        height: 15px;
+    .trigger {
+      a {
+        text-decoration: none;
+        color: $grey-color;
 
-        path {
-          fill: $grey-color-dark;
+        &:first-child {
+          margin-left: 40px;
+        }
+
+        &:not(:last-child) {
+          margin-right: 40px;
         }
       }
     }
 
-    .trigger {
-      clear: both;
-      display: none;
-    }
+    @include media-query($on-palm) {
+      position: absolute;
+      top: 9px;
+      right: 15px;
+      background-color: $header-background-color;
+      border: 1px solid $grey-color;
+      border-radius: 5px;
+      padding: 0 0 10px 0;
+      z-index: 1;
 
-    &:hover .trigger {
-      display: block;
-      padding-bottom: 5px;
-    }
+      .menu-icon {
+        display: block;
+        float: right;
+        width: 36px;
+        height: 26px;
+        line-height: 0;
+        padding-top: 10px;
+        text-align: center;
 
-    .page-link {
-      display: block;
-      padding: 5px 10px;
-      margin-left: 20px;
+        > svg {
+          width: 18px;
+          height: 15px;
 
-      &:not(:last-child) {
-        margin-right: 0;
+          path {
+            fill: $grey-color;
+          }
+        }
+      }
+
+      .trigger {
+        clear: both;
+        display: none;
+
+        a {
+          display: block;
+          margin: 40px 20px !important;
+
+          &:last-child {
+            margin-bottom: 20px !important;
+          }
+        }
+      }
+
+      &:hover .trigger {
+        display: block;
+        padding-bottom: 5px;
       }
     }
+  }
+}
+
+.home {
+  background: url('/images/background-desktop.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  width: 100%;
+  padding: 180px 100px;
+  display: flex;
+  align-items: center;
+
+  @include media-query(1000px) {
+    display: block;
+    padding: 80px 30px;
+  }
+
+  .home-description {
+    flex-shrink: 0;
+    text-align: center;
+    width: 445px;
+
+    .home-description-text {
+      background: $header-background-color;
+      opacity: 0.8;
+      border-radius: 10px;
+      padding: 10px;
+
+      .home-description-text-title {
+        font-size: $base-font-size * 3;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+
+      .home-description-text-description {
+        font-size: $base-font-size * 1.5;
+        margin: 20px 0;
+      }
+    }
+
+    .home-description-badges {
+      .app-store-link {
+        margin-top: 40px;
+        display: inline-block;
+        text-decoration: none;
+
+        .app-store-badge {
+          height: 60px;
+        }
+
+        &:not(:last-child) {
+          margin-right: 40px;
+
+          @include media-query(550px) {
+            margin-right: 0;
+            display: block;
+          }
+        }
+      }
+    }
+
+    @include media-query(1000px) {
+      width: auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .home-screenshot {
+    flex-grow: 1;
+    margin-left: 140px;
+
+    img {
+      max-width: 100%;
+    }
+
+    .home-screenshot-all {
+      @include media-query(1400px) {
+        display: none;
+      }
+    }
+
+    .home-screenshot-individual {
+      display: none;
+
+      @include media-query(1400px) {
+        display: initial;
+      }
+    }
+
+    @include media-query(1000px) {
+      padding-top: 60px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+article {
+  padding: 20px 40px;
+}
+
+footer {
+  background-color: $header-background-color;
+  color: $grey-color;
+  border-top: 1px solid $grey-color;
+  padding: 20px;
+  text-align: center;
+
+  & > div:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  .riot-disclaimer {
+    font-size: $small-font-size;
+  }
+
+  @include media-query-min($on-laptop) {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
   }
 }

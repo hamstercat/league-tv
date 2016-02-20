@@ -12,7 +12,14 @@
     @content;
   }	
 }
-    
+
+@mixin media-query-min($device) {
+  @media screen and (min-width: $device) {
+    @content;
+  }	
+}
+
+
 // Vendors import
 @import '../node_modules/normalize.css/normalize';
 @import '../node_modules/font-awesome/scss/font-awesome';
