@@ -2458,10 +2458,17 @@ html {
   font-family: "Open Sans", "Helvetic Neue", Helvetica, Arial, sans-serif !important; }
 
 @media screen and (min-width: 800px) {
-  body {
+  body.page {
     position: relative;
     padding-bottom: 6rem;
     min-height: 100%; } }
+
+@media screen and (min-width: 800px) {
+  body.page footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0; } }
 
 header {
   background-color: black;
@@ -2606,9 +2613,3 @@ footer {
     margin-bottom: 20px; }
   footer .riot-disclaimer {
     font-size: 11.2px; }
-  @media screen and (min-width: 800px) {
-    footer {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      left: 0; } }
